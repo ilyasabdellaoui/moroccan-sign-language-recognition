@@ -3,6 +3,11 @@
   "name": "Moroccan Sign Language",
   "icons": [
     {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
