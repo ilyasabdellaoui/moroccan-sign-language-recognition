@@ -6,9 +6,34 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply antialiased text-gray-900;
+  }
+
+  /* Custom Scrollbar Styles */
+  /* For WebKit browsers (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+    height: 8px; /* For horizontal scrollbars */
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100; /* Light gray track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-600 rounded-full; /* Purple thumb */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-700; /* Darker purple on hover */
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #7c3aed #f3f4f6; /* Purple thumb and gray track */
   }
 }
 
@@ -16,7 +41,7 @@
   .btn-primary {
     @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition-colors;
   }
-  
+
   .btn-secondary {
     @apply inline-flex items-center px-6 py-3 border border-purple-600 text-base font-medium rounded-full text-purple-600 hover:bg-purple-50 transition-colors;
   }
