@@ -3,7 +3,7 @@ import { useRecognitionContext } from '../../contexts/RecognitionContext';
 import { Card } from '../ui/Card';
 
 export const VideoUpload = () => {
-  const { processVideo, isProcessing } = useRecognitionContext();
+  const { processVideo, isProcessing, recognitionResult } = useRecognitionContext();
 
   const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -13,7 +13,7 @@ export const VideoUpload = () => {
   };
 
   return (
-    <Card className="w-full min-h-[300px] flex items-center justify-center">
+    <Card className="w-full min-h-[300px] flex flex-col items-center justify-center">
       <input
         type="file"
         accept="video/*"
@@ -30,6 +30,11 @@ export const VideoUpload = () => {
           {isProcessing ? 'Processing...' : 'Drop video here or click to upload'}
         </span>
       </label>
+      {recognitionResult && (
+        <div className="mt-4 p-4 bg-gray-50 rounded-lg text-gray-800">
+          {recognitionResult}
+        </div>
+      )}
     </Card>
   );
 };
