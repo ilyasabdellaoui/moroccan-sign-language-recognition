@@ -6,7 +6,7 @@ interface RecognitionContextType {
   recognitionResult: string;
   signResult: string;
   error: string;
-  processFrame: (frame: string) => Promise<void>;
+  processFrame: (frame: File) => Promise<void>;
   processVideo: (video: File) => Promise<void>;
   convertTextToSign: (text: string) => Promise<void>;
 }
@@ -19,7 +19,7 @@ export const RecognitionProvider = ({ children }: { children: ReactNode }) => {
   const [signResult, setSignResult] = useState('');
   const [error, setError] = useState('');
 
-  const processFrame = async (frame: string) => {
+  const processFrame = async (frame: File) => {
     try {
       setIsProcessing(true);
       const result = await recognitionService.processFrame(frame);

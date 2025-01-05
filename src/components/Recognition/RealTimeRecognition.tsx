@@ -11,7 +11,20 @@ export const RealTimeRecognition = () => {
   const handleCapture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     if (imageSrc) {
-      processFrame(imageSrc);
+      // Convert the imageSrc (data URL) to a Blob
+      const byteString = atob(imageSrc.split(',')[1]);  // Get the binary data
+      const arrayBuffer = new ArrayBuffer(byteString.length);
+      const uint8Array = new Uint8Array(arrayBuffer);
+      
+      for (let i = 0; i < byteString.length; i++) {
+        uint8Array[i] = byteString.charCodeAt(i);
+      }
+      
+      // Create a Blob from the binary data (image)
+      const blob = new Blob([uint8Array], { type: 'image/png' }); 
+      const file = new File([blob], 'capture.png', { type: 'image/png' });
+
+      processFrame(file);
     }
   }, [processFrame]);
 
