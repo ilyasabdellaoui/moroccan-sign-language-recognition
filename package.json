@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "lucide-react": "^0.344.0",
+    "moroccan-sign-language": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-webcam": "^7.2.0"
