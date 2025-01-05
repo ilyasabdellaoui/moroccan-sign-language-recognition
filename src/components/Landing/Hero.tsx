@@ -28,7 +28,7 @@ const features = [
 export const Hero = ({ onFeatureClick }: HeroProps) => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-purple-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 pt-16 pb-24 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 pt-24 pb-24 sm:px-6 lg:px-8">
         <div className="text-center">
           <Languages className="h-16 w-16 mx-auto text-purple-600 mb-6" />
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
