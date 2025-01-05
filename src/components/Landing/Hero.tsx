@@ -1,24 +1,31 @@
 import { Languages, Camera, FileVideo, Type } from 'lucide-react';
 
+interface HeroProps {
+  onFeatureClick: (feature: string) => void;
+}
+
 const features = [
   {
+    id: 'real-time',
     icon: Camera,
     title: 'Real-time Recognition',
     description: 'Instantly translate sign language using your camera'
   },
   {
+    id: 'video-upload',
     icon: FileVideo,
     title: 'Video Processing',
     description: 'Upload and analyze pre-recorded sign language videos'
   },
   {
+    id: 'text-to-sign',
     icon: Type,
     title: 'Text to Sign',
     description: 'Convert written text into sign language demonstrations'
   }
 ];
 
-export const Hero = () => {
+export const Hero = ({ onFeatureClick }: HeroProps) => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-4xl mx-auto px-4 pt-16 pb-24 sm:px-6 lg:px-8">
@@ -34,7 +41,11 @@ export const Hero = () => {
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.title} className="relative group">
+            <div
+              key={feature.id}
+              onClick={() => onFeatureClick(feature.id)}
+              className="relative group cursor-pointer"
+            >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200" />
               <div className="relative p-6 bg-white rounded-lg ring-1 ring-gray-900/5">
                 <feature.icon className="h-8 w-8 text-purple-600 mb-4" />
@@ -43,15 +54,6 @@ export const Hero = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <a 
-            href="#features"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition-colors"
-          >
-            Get Started
-          </a>
         </div>
       </div>
     </div>
