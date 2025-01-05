@@ -9,9 +9,11 @@ export const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Languages className="h-8 w-8 text-purple-600" />
-            <span className="ml-2 text-xl font-semibold text-gray-900 hidden sm:block">MSL Recognition</span>
-            <span className="ml-2 text-xl font-semibold text-gray-900 sm:hidden">MSL</span>
+            <a href="/" className="flex items-center"> {/* Make the logo clickable */}
+              <Languages className="h-8 w-8 text-purple-600" />
+              <span className="ml-2 text-xl font-semibold text-gray-900 hidden sm:block">MSL Recognition</span>
+              <span className="ml-2 text-xl font-semibold text-gray-900 sm:hidden">MSL</span>
+            </a>
           </div>
           
           {/* Desktop Navigation */}
