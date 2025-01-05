@@ -44,13 +44,15 @@ export const Hero = ({ onFeatureClick }: HeroProps) => {
             <div
               key={feature.id}
               onClick={() => onFeatureClick(feature.id)}
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer h-full"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200" />
-              <div className="relative p-6 bg-white rounded-lg ring-1 ring-gray-900/5">
-                <feature.icon className="h-8 w-8 text-purple-600 mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-gray-600">{feature.description}</p>
+              <div className="relative h-full p-6 bg-white rounded-lg ring-1 ring-gray-900/5 flex flex-col justify-between">
+                <div>
+                  <feature.icon className="h-8 w-8 text-purple-600 mb-4" />
+                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <p className="mt-2 text-gray-600">{feature.description}</p>
+                </div>
               </div>
             </div>
           ))}
