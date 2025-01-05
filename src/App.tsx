@@ -35,7 +35,7 @@ function App() {
         
         {/* Render the active feature */}
         {activeFeature && (
-          <div id="features" className="py-12 px-4 sm:px-6 lg:px-8 flex-1">
+          <div id="features" className="py-12 px-4 sm:px-6 lg:px-8 flex-1 bg-white"> {/* Added bg-white */}
             <div className="max-w-4xl mx-auto space-y-8">
               {renderFeature()}
             </div>
